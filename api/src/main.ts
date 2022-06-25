@@ -4,9 +4,10 @@ import { TimeOutInterceptor } from './common/interceptors/timeout.interceptor';
 import { ValidationPipe } from '@nestjs/common';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { AllExceptionFilter } from './common/filters/http-exeption.filter';
+import { NestExpressApplication } from '@nestjs/platform-express';
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule);
+  const app = await NestFactory.create<NestExpressApplication>(AppModule);
   app.useGlobalFilters(new AllExceptionFilter());
   app.useGlobalInterceptors(new TimeOutInterceptor());
   app.useGlobalPipes(new ValidationPipe());
