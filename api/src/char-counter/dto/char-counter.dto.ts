@@ -1,6 +1,6 @@
 import { IsArray, IsBoolean, IsNotEmpty, IsString } from 'class-validator';
 import { ApiProperty } from '@nestjs/swagger';
-import { ICharCounter } from '../interfaces/char-counter.interface';
+import { ICharCountersResult } from '../interfaces/char-counter.interface';
 
 export class CharCounterDTO {
   @ApiProperty()
@@ -21,5 +21,5 @@ export class CharCounterDTO {
   @ApiProperty()
   @IsNotEmpty()
   @IsArray()
-  results: ICharCounter[];
+  results: ICharCountersResult[];
 }
