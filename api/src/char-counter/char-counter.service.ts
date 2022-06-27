@@ -3,7 +3,7 @@ import { ExternalService } from '../common/external/external.service';
 import { DataType, WordType } from '../common/constants/external.constant';
 import { UtilsService } from '../common/utils/utils.service';
 import {
-  ICharCounter,
+  ICharCountersResult,
   ICharCounters,
 } from './interfaces/char-counter.interface';
 
@@ -21,7 +21,7 @@ export class CharCounterService {
       const hrstart = process.hrtime();
       const letters = [WordType.C, WordType.E, WordType.L];
       let names: string[][] = [];
-      let counters: ICharCounter[] = [];
+      let counters: ICharCountersResult[] = [];
 
       const allApiData = await Promise.all([
         this.externalService.getAllApiData(DataType.CHARACTER),
@@ -43,7 +43,7 @@ export class CharCounterService {
       }
 
       for (let i = 0; i < letters.length; i++) {
-        const counter: ICharCounter = {
+        const counter: ICharCountersResult = {
           char: i === 0 ? WordType.C : i === 1 ? WordType.E : WordType.L,
           resource:
             i === 0
