@@ -1,6 +1,7 @@
 import { Injectable, Logger } from '@nestjs/common';
 import axios from 'axios';
 import { DataType } from '../constants/external.constant';
+import { IAllAPIData } from './interfaces/external.interface';
 
 @Injectable()
 export class ExternalService {
@@ -24,7 +25,7 @@ export class ExternalService {
   async getApiData(
     dataType: typeof DataType[keyof typeof DataType],
     page = 1,
-  ): Promise<any> {
+  ): Promise<object> {
     this.logger.log(
       `ExternalService - Get data per page in the api ${dataType}, page ${page}`,
     );
@@ -41,7 +42,7 @@ export class ExternalService {
 
   async getAllApiData(
     dataType: typeof DataType[keyof typeof DataType],
-  ): Promise<any> {
+  ): Promise<IAllAPIData[]> {
     this.logger.log(`ExternalService - Get all data in the api ${dataType}`);
     try {
       const numberPages = await this.getPagesNumber(dataType);

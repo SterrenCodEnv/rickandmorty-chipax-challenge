@@ -12,8 +12,8 @@ export class AppController {
   @Get()
   @ApiOperation({ summary: 'Hello Guest' })
   @ApiResponse({
-    status: HttpStatus.ACCEPTED,
-    description: 'Description',
+    status: HttpStatus.OK,
+    description: 'The requested response has been successful',
   })
   async getHello(): Promise<HelloDTO> {
     this.logger.log(`APP Controller Init`);
