@@ -4,6 +4,7 @@ import { AppService } from './app.service';
 import { CommonModule } from './common/common.module';
 import { CharCounterModule } from './char-counter/char-counter.module';
 import { ConfigModule } from '@nestjs/config';
+import { EpisodeLocationsModule } from './episode-locations/episode-locations.module';
 
 @Module({
   imports: [
@@ -13,6 +14,7 @@ import { ConfigModule } from '@nestjs/config';
     }),
     CommonModule,
     CharCounterModule,
+    EpisodeLocationsModule,
   ],
   controllers: [AppController],
   providers: [AppService],

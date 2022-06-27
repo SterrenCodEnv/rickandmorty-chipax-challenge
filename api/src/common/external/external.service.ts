@@ -17,7 +17,7 @@ export class ExternalService {
       const result = await axios.get(`${process.env.RAM_BASE_URL}${dataType}`);
       return result?.data?.info?.pages;
     } catch (error) {
-      this.logger.log(`ExternalService - "Failed to get pages number"`);
+      this.logger.error(`ExternalService - "Failed to get pages number"`);
       throw new Error(error);
     }
   }
@@ -35,7 +35,27 @@ export class ExternalService {
       );
       return result?.data;
     } catch (error) {
-      this.logger.log(`ExternalService - "Failed to get data per page"`);
+      this.logger.error(`ExternalService - "Failed to get data per page"`);
+      throw new Error(error);
+    }
+  }
+
+  async getApiDataByIds(
+    dataType: typeof DataType[keyof typeof DataType],
+    ids = ['1'],
+  ): Promise<any> {
+    this.logger.log(
+      `ExternalService - Get data by ID in the api ${dataType}, Id ${ids}`,
+    );
+    try {
+      const result = await axios.get(
+        `${process.env.RAM_BASE_URL}${dataType}/${ids}`,
+      );
+      return result?.data;
+    } catch (error) {
+      this.logger.error(
+        `ExternalService - "Failed to get data by ID in the api"`,
+      );
       throw new Error(error);
     }
   }
@@ -59,11 +79,11 @@ export class ExternalService {
           return responses;
         })
         .catch((e) => {
-          this.logger.log(`ExternalService - Failed to "Get all data"`);
+          this.logger.error(`ExternalService - Failed to "Get all data"`);
           throw new Error(e);
         });
     } catch (error) {
-      this.logger.log(`ExternalService - Failed to "Get all data"`);
+      this.logger.error(`ExternalService - Failed to "Get all data"`);
       throw new Error(error);
     }
   }
