@@ -6,18 +6,21 @@ import { CharCounterDTO } from './dto/char-counter.dto';
 @ApiTags('Char Counter')
 @Controller('char-counter')
 export class CharCounterController {
-  constructor(private readonly charCounterService: CharCounterService) { }
+  constructor(private readonly charCounterService: CharCounterService) {}
   private logger = new Logger('CharCounterController', { timestamp: true });
 
   @Get()
-  @ApiOperation({ summary: 'Char Counter' })
+  @ApiOperation({
+    summary: 'Char Counter',
+  })
   @ApiResponse({
     status: HttpStatus.OK,
-    description: 'Description 200',
+    description: 'The requested response has been successful',
   })
   @ApiResponse({
     status: HttpStatus.INTERNAL_SERVER_ERROR,
-    description: 'Description de error 500',
+    description:
+      'The server encountered an unexpected condition which prevented it from fulfilling the request.',
   })
   async getCharCounter(): Promise<CharCounterDTO> {
     this.logger.log(`CharCounterController Init`);
