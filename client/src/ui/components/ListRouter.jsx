@@ -5,6 +5,7 @@ import ListItemText from '@mui/material/ListItemText';
 import PushPinIcon from '@mui/icons-material/PushPin';
 import AbcIcon from '@mui/icons-material/Abc';
 import LogoDevIcon from '@mui/icons-material/LogoDev';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import { Link } from 'react-router-dom';
 
 export const mainListItems = (
@@ -32,9 +33,19 @@ export const secondaryListItems = (
       target="_blank"
     >
       <ListItemIcon>
-        <LogoDevIcon />
+        <LogoDevIcon color="primary" />
       </ListItemIcon>
       <ListItemText primary="Portfolio" />
+    </ListItemButton>
+    <ListItemButton
+      component="a"
+      to="https://www.linkedin.com/in/sterrenjuan/"
+      target="_blank"
+    >
+      <ListItemIcon>
+        <LinkedInIcon color="primary" />
+      </ListItemIcon>
+      <ListItemText primary="Profile" />
     </ListItemButton>
   </React.Fragment>
 );

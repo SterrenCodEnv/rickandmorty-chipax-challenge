@@ -7,7 +7,14 @@ import Masonry from '@mui/lab/Masonry';
 
 export const EpisodeLocationsContent = ({ payload }) => {
   return (
-    <Masonry columns={3} spacing={3}>
+    <Masonry
+      columns={{
+        sm: 1,
+        md: 3,
+        xl: 4,
+      }}
+      spacing={3}
+    >
       {payload.map((location, index) => (
         <Card key={index}>
           <CardHeader
@@ -17,10 +24,8 @@ export const EpisodeLocationsContent = ({ payload }) => {
               align: 'center',
             }}
             sx={{
-              backgroundColor: (theme) =>
-                theme.palette.mode === 'light'
-                  ? theme.palette.grey[200]
-                  : theme.palette.grey[700],
+              backgroundColor: 'teal',
+              color: 'white',
             }}
           />
           <CardContent>
