@@ -9,7 +9,6 @@ import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import Link from '@mui/material/Link';
 import { Navbar, Sidebar } from './ui';
-
 import { AppRouter } from './router/AppRouter';
 
 function Copyright(props) {
@@ -41,6 +40,7 @@ const mdTheme = createTheme({
 
 export const App = () => {
   const [open, setOpen] = React.useState(true);
+
   return (
     <>
       <ThemeProvider theme={mdTheme}>
