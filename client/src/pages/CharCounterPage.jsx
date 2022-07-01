@@ -10,13 +10,13 @@ import { CircularProgress } from '@mui/material';
 import { useAxios } from '../hooks';
 
 export const CharCounterPage = () => {
-  const counter = useAxios('/char-counter');
+  const payload = useAxios(`${window.location.pathname}`);
   return (
     <>
       <GlobalStyles
         styles={{ ul: { margin: 0, padding: 0, listStyle: 'none' } }}
       />
-      {counter.isLoading ? (
+      {payload.isLoading ? (
         <Container
           maxWidth="md"
           sx={{
@@ -30,10 +30,10 @@ export const CharCounterPage = () => {
         >
           <CircularProgress />
         </Container>
-      ) : counter.hasError !== null ? (
+      ) : payload.hasError !== null ? (
         <Alert severity="error">
           <AlertTitle>Error</AlertTitle>
-          {counter.hasError}
+          {payload.hasError}
         </Alert>
       ) : (
         <>
@@ -51,7 +51,7 @@ export const CharCounterPage = () => {
               color="text.primary"
               gutterBottom
             >
-              {counter.data.exercise_name}
+              {payload.data.exercise_name}
             </Typography>
 
             <Container
@@ -65,7 +65,7 @@ export const CharCounterPage = () => {
                 pt: 3,
               }}
             >
-              {counter.data.in_time ? (
+              {payload.data.in_time ? (
                 <CheckCircleOutlineIcon sx={{ fontSize: 50 }} color="primary" />
               ) : (
                 <HighlightOffIcon sx={{ fontSize: 50 }} color="error" />
@@ -78,11 +78,11 @@ export const CharCounterPage = () => {
               color="text.secondary"
               component="p"
             >
-              Tiempo de ejecución: {counter.data.time}
+              Tiempo de ejecución: {payload.data.time}
             </Typography>
           </Container>
           <Container maxWidth="md" component="main">
-            <CharCounterContent payload={counter.data.results} />
+            <CharCounterContent payload={payload.data.results} />
           </Container>
           <Container
             maxWidth="md"
