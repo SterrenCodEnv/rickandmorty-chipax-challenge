@@ -157,61 +157,42 @@ Output en formato json con esta estructura
 
 ```text
 .
-├── nest-cli.json
+├── babel.config.js
+├── index.html
+├── jest.config.js
 ├── package.json
 ├── package-lock.json
-├── README.md
 ├── src
-│   ├── app.controller.spec.ts
-│   ├── app.controller.ts
-│   ├── app.module.ts
-│   ├── app.service.ts
-│   ├── char-counter
-│   │   ├── char-counter.controller.spec.ts
-│   │   ├── char-counter.controller.ts
-│   │   ├── char-counter.module.ts
-│   │   ├── char-counter.service.spec.ts
-│   │   ├── char-counter.service.ts
-│   │   ├── dto
-│   │   │   └── char-counter.dto.ts
-│   │   └── interfaces
-│   │       └── char-counter.interface.ts
-│   ├── common
-│   │   ├── common.module.ts
-│   │   ├── constants
-│   │   │   └── external.constant.ts
-│   │   ├── external
-│   │   │   ├── external.service.spec.ts
-│   │   │   ├── external.service.ts
-│   │   │   └── interfaces
-│   │   │       └── external.interface.ts
-│   │   ├── filters
-│   │   │   └── http-exeption.filter.ts
-│   │   ├── interceptors
-│   │   │   └── timeout.interceptor.ts
-│   │   └── utils
-│   │       ├── utils.service.spec.ts
-│   │       └── utils.service.ts
-│   ├── dto
-│   │   └── hello.dto.ts
-│   ├── episode-locations
-│   │   ├── dto
-│   │   │   └── episode-locations.dto.ts
-│   │   ├── episode-locations.controller.spec.ts
-│   │   ├── episode-locations.controller.ts
-│   │   ├── episode-locations.module.ts
-│   │   ├── episode-locations.service.spec.ts
-│   │   ├── episode-locations.service.ts
-│   │   └── interfaces
-│   │       └── episode-locations.interface.ts
-│   ├── interfaces
-│   │   └── hello.interface.ts
-│   └── main.ts
-├── test
-│   ├── app.e2e-spec.ts
-│   └── jest-e2e.json
-├── tsconfig.build.json
-├── tsconfig.json
+│   ├── api
+│   │   ├── index.js
+│   │   └── ramApi.js
+│   ├── App.jsx
+│   ├── favicon.svg
+│   ├── helpers
+│   │   ├── getEnvVariables.js
+│   │   └── index.js
+│   ├── hooks
+│   │   ├── index.js
+│   │   └── useAxios.js
+│   ├── index.js
+│   ├── main.jsx
+│   ├── pages
+│   │   ├── CharCounterPage.jsx
+│   │   ├── EpisodeLocationsPage.jsx
+│   │   └── index.js
+│   ├── router
+│   │   └── AppRouter.jsx
+│   ├── styles.css
+│   └── ui
+│       ├── components
+│       │   ├── CharCounterContent.jsx
+│       │   ├── EpisodeLocationsContent.jsx
+│       │   ├── index.js
+│       │   ├── ListRouter.jsx
+│       │   ├── Navbar.jsx
+│       │   └── Sidebar.jsx
+│       └── index.js
+├── vite.config.js
 └── yarn.lock
 ```
 
