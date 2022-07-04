@@ -8,7 +8,7 @@ export class ExternalService {
   private logger = new Logger('ExternalService', { timestamp: true });
 
   async getPagesNumber(
-    dataType: typeof DataType[keyof typeof DataType],
+    dataType: typeof DataType[keyof typeof DataType] = 'character',
   ): Promise<number> {
     this.logger.log(
       `ExternalService - Get pages number in the api ${dataType}`,
