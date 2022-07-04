@@ -301,4 +301,5 @@ En postmane encontrara los API's correspondiente para realizar consultas dentro 
 ## Contacto
 
 - Juan Ignacio Sterren [Personal Portfolio](https://jsterren.vercel.app/) | [LinkedIn Profile
-  ](https://www.linkedin.com/in/sterrenjuan/)sterrenjuanignacio@gmail.com
+  ](https://www.linkedin.com/in/sterrenjuan/)
+  sterrenjuanignacio@gmail.com
